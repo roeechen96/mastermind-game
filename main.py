@@ -7,7 +7,6 @@ def generate_secret_code()  -> List[int]:
 
 
 def get_feedback(secret: List[int], guess: List[int]) -> Tuple[int, int]:
-    # Calculate Bulls (correct digit and position)
     bulls_count = sum(
         secret_digit == guess_digit for secret_digit, guess_digit in zip(secret, guess)
     )
@@ -20,7 +19,6 @@ def get_feedback(secret: List[int], guess: List[int]) -> Tuple[int, int]:
         for digit in guess_digit_counts
     )
 
-    # Calculate Cows (total matches excluding Bulls)
     cows_count = total_matches - bulls_count
 
     return bulls_count, cows_count
@@ -29,6 +27,10 @@ def get_feedback(secret: List[int], guess: List[int]) -> Tuple[int, int]:
 def mastermind() -> None:
     print("Welcome to mastermid Game!")
     print("Try to guess the 4-digits secret code")
+    print("Feedback:")
+    print("- Bulls: Correct digits in correct positions.")
+    print("- Cows: Correct digits in incorrect positions.")
+    print("Note: The secret code may contain repeated digits.\n")
 
     secret_code = generate_secret_code()
     # print(secret_code)
