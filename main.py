@@ -36,7 +36,7 @@ def mastermind() -> None:
     # print(secret_code)
     guessed_code = 4
 
-    attampts = 0
+    attempts = 0
     while True:
         guess = input("Enter your 4-digits guess (numbers only): ")
 
@@ -45,7 +45,7 @@ def mastermind() -> None:
             continue
 
         guess = [int(digit) for digit in guess]
-        attampts += 1
+        attempts += 1
 
         bulls, cows = get_feedback(secret_code, guess)
         print(f"Bulls: {bulls}, Cows: {cows}")
