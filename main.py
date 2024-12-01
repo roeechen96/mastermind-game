@@ -34,7 +34,6 @@ def mastermind() -> None:
 
     secret_code = generate_secret_code()
     # print(secret_code)
-    guessed_code = 4
 
     attempts = 0
     while True:
@@ -50,7 +49,7 @@ def mastermind() -> None:
         bulls, cows = get_feedback(secret_code, guess)
         print(f"Bulls: {bulls}, Cows: {cows}")
 
-        if bulls == guessed_code:
+        if bulls == 4:
             print(f"Congratulations! You guessed the secret code in {attempts} attempts.")
             break
 
