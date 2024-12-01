@@ -51,7 +51,7 @@ def mastermind() -> None:
         print(f"Bulls: {bulls}, Cows: {cows}")
 
         if bulls == guessed_code:
-            print(f"You guessed right the code in {attampts} attampts")
+            print(f"Congratulations! You guessed the secret code in {attempts} attempts.")
             break
 
 
